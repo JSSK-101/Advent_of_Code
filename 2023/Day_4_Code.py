@@ -1,7 +1,7 @@
-f = open("Day_4_Input.txt", "r")
-#f = open("Test.txt", "r")
-data = f.readlines()
 import re as r
+
+f = open("Day_4_Input.txt", "r")
+data = f.readlines()
 
 def part_1():
     count = 0
@@ -27,7 +27,6 @@ def part_2():
     scratchcards = []
     for i in range(len(data)):
         scratchcards.append(1)
-
     k = 0
     for line in data:
         times = 0
@@ -42,17 +41,14 @@ def part_2():
                 break
         for i in range(len(y)):
             if y[i] in z:
-                times+= 1
-        
+                times+= 1       
         for j in range(scratchcards[k]):
             for i in range(times):
                 scratchcards[k+i+1] += 1     
-        k+= 1
-    
+        k+= 1    
     count = 0
     for i in range(len(scratchcards)):
-        count += scratchcards[i]
-    
+        count += scratchcards[i]   
     return count
         
-print(part_2())
+print(part_1(), part_2())
